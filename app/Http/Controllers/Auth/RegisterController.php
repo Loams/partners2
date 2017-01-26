@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Partner;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -78,5 +79,17 @@ class RegisterController extends Controller
             'partners_id' => $data['partners_id']
         ];
         return User::create($user);
+    }
+    
+    /**
+     * override showRegistrationForm()
+     * to add partners
+     * @return register view
+     */
+    public function showRegistrationForm()
+    {
+        $partners = Partner::pluck('name', 'id');
+        $partners->prepend('None','');
+        return view('auth.register', compact('partners'));
     }
 }
