@@ -53,8 +53,7 @@ class RegisterController extends Controller
             'lastname' => 'required|max:255',
             'function' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'group_id' => 'nullable|required_without:store_id',
-            'store_id' => 'nullable|required_without:group_id',
+            'partners_id' => 'required',
             'phone' => 'min:10|max:10|required',
             'password' => 'required|min:6|confirmed',
         ]);
@@ -68,7 +67,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user_data = [
+        $user = [
             'gender' =>$data['gender'],
             'firstname' =>$data['firstname'],
             'lastname' => $data['lastname'],
@@ -76,14 +75,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'phone' =>$data['phone'],
             'password' => bcrypt($data['password']),
+            'partners_id' => $data['partners_id']
         ];
-        
-        if(isset($data['group_id']) && $data['group_id'] != '')
-            $user_data['group_id'] = $data['group_id'];
-        
-        if(isset($data['store_id']) && $data['group_id'] != '')
-            $user_data['store_id'] = $data['store_id']; 
-        
-        return User::create($user_data);
+        return User::create($user);
     }
 }
