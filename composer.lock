@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "62586dc2c527b2f1f03f4f821d4264fc",
-    "content-hash": "b5752259abf5e16240f7cb88e6ba0732",
+    "hash": "faf0e75becf454f7f73a71006d937e59",
+    "content-hash": "e2bbdac8701e363af23871eaa3183a82",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -62,32 +62,33 @@
             "time": "2017-01-19 08:19:49"
         },
         {
-            "name": "berkayk/onesignal-laravel",
-            "version": "v0.9.5",
+            "name": "barryvdh/laravel-dompdf",
+            "version": "v0.7.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/berkayk/laravel-onesignal.git",
-                "reference": "a6adc3ffd91536ff608ff1f02ee0df310d664a22"
+                "url": "https://github.com/barryvdh/laravel-dompdf.git",
+                "reference": "6cb20d3f397d739163d2d743a4600009e52cd453"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/berkayk/laravel-onesignal/zipball/a6adc3ffd91536ff608ff1f02ee0df310d664a22",
-                "reference": "a6adc3ffd91536ff608ff1f02ee0df310d664a22",
+                "url": "https://api.github.com/repos/barryvdh/laravel-dompdf/zipball/6cb20d3f397d739163d2d743a4600009e52cd453",
+                "reference": "6cb20d3f397d739163d2d743a4600009e52cd453",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "^6.2",
-                "illuminate/support": "4.*|5.*",
-                "php": ">=5.4.0",
-                "symfony/psr-http-message-bridge": "^0.2.0"
-            },
-            "require-dev": {
-                "vlucas/phpdotenv": "^2.2"
+                "dompdf/dompdf": "^0.7",
+                "illuminate/support": "5.1.x|5.2.x|5.3.x|5.4.x",
+                "php": ">=5.5.9"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.7-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
-                    "Berkayk\\OneSignal\\": "src/"
+                    "Barryvdh\\DomPDF\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -96,24 +97,17 @@
             ],
             "authors": [
                 {
-                    "name": "Maykonn Welington Candido",
-                    "email": "maykonn@outlook.com"
-                },
-                {
-                    "name": "Berkay Kaya",
-                    "email": "berkayk@gmail.com",
-                    "homepage": "http://berkaykaya.com"
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
                 }
             ],
-            "description": "OneSignal Push Wrapper Laravel",
+            "description": "A DOMPDF Wrapper for Laravel",
             "keywords": [
-                "WebPush",
+                "dompdf",
                 "laravel",
-                "laravel 5",
-                "onesignal",
-                "push"
+                "pdf"
             ],
-            "time": "2016-12-21 11:06:02"
+            "time": "2017-01-24 18:12:54"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -319,155 +313,98 @@
             "time": "2015-11-06 14:35:42"
         },
         {
-            "name": "guzzlehttp/guzzle",
-            "version": "6.2.2",
+            "name": "dompdf/dompdf",
+            "version": "v0.7.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "ebf29dee597f02f09f4d5bbecc68230ea9b08f60"
+                "url": "https://github.com/dompdf/dompdf.git",
+                "reference": "5c98652b1a5beb7e3cc8ec35419b2828dd63ab14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ebf29dee597f02f09f4d5bbecc68230ea9b08f60",
-                "reference": "ebf29dee597f02f09f4d5bbecc68230ea9b08f60",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/5c98652b1a5beb7e3cc8ec35419b2828dd63ab14",
+                "reference": "5c98652b1a5beb7e3cc8ec35419b2828dd63ab14",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/promises": "^1.0",
-                "guzzlehttp/psr7": "^1.3.1",
-                "php": ">=5.5"
+                "ext-dom": "*",
+                "ext-gd": "*",
+                "ext-mbstring": "*",
+                "phenx/php-font-lib": "0.4.*",
+                "phenx/php-svg-lib": "0.1.*",
+                "php": ">=5.3.0"
             },
             "require-dev": {
-                "ext-curl": "*",
-                "phpunit/phpunit": "^4.0",
-                "psr/log": "^1.0"
+                "phpunit/phpunit": "3.7.*"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.2-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/functions_include.php"
-                ],
-                "psr-4": {
-                    "GuzzleHttp\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                }
-            ],
-            "description": "Guzzle is a PHP HTTP client library",
-            "homepage": "http://guzzlephp.org/",
-            "keywords": [
-                "client",
-                "curl",
-                "framework",
-                "http",
-                "http client",
-                "rest",
-                "web service"
-            ],
-            "time": "2016-10-08 15:01:37"
-        },
-        {
-            "name": "guzzlehttp/promises",
-            "version": "v1.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/promises.git",
-                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
-                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-develop": "0.7-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "GuzzleHttp\\Promise\\": "src/"
+                    "Dompdf\\": "src/"
                 },
-                "files": [
-                    "src/functions_include.php"
+                "classmap": [
+                    "lib/"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "LGPL-2.1"
             ],
             "authors": [
                 {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                },
+                {
+                    "name": "Brian Sweeney",
+                    "email": "eclecticgeek@gmail.com"
+                },
+                {
+                    "name": "Gabriel Bull",
+                    "email": "me@gabrielbull.com"
                 }
             ],
-            "description": "Guzzle promises library",
-            "keywords": [
-                "promise"
-            ],
-            "time": "2016-12-20 10:07:11"
+            "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
+            "homepage": "https://github.com/dompdf/dompdf",
+            "time": "2016-05-11 00:36:29"
         },
         {
-            "name": "guzzlehttp/psr7",
-            "version": "1.3.1",
+            "name": "gloudemans/shoppingcart",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/guzzle/psr7.git",
-                "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b"
+                "url": "https://github.com/Crinsane/LaravelShoppingcart.git",
+                "reference": "195cc095f53c66b60afaf0753295bc9c6b2773c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
-                "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
+                "url": "https://api.github.com/repos/Crinsane/LaravelShoppingcart/zipball/195cc095f53c66b60afaf0753295bc9c6b2773c3",
+                "reference": "195cc095f53c66b60afaf0753295bc9c6b2773c3",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0",
-                "psr/http-message": "~1.0"
-            },
-            "provide": {
-                "psr/http-message-implementation": "1.0"
+                "illuminate/events": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/session": "5.1.*|5.2.*|5.3.*|5.4.*",
+                "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*"
             },
             "require-dev": {
+                "mockery/mockery": "~0.9.0",
+                "orchestra/testbench": "~3.0",
                 "phpunit/phpunit": "~4.0"
             },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4-dev"
-                }
+            "suggest": {
+                "gloudemans/notify": "Simple flash notifications for Laravel"
             },
+            "type": "library",
             "autoload": {
                 "psr-4": {
-                    "GuzzleHttp\\Psr7\\": "src/"
-                },
-                "files": [
-                    "src/functions_include.php"
-                ]
+                    "Gloudemans\\Shoppingcart\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -475,19 +412,16 @@
             ],
             "authors": [
                 {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
+                    "name": "Rob Gloudemans",
+                    "email": "info@robgloudemans.nl"
                 }
             ],
-            "description": "PSR-7 message implementation",
+            "description": "Laravel Shoppingcart",
             "keywords": [
-                "http",
-                "message",
-                "stream",
-                "uri"
+                "laravel",
+                "shoppingcart"
             ],
-            "time": "2016-06-24 23:00:38"
+            "time": "2017-01-25 09:56:35"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1302,6 +1236,74 @@
             "time": "2016-11-07 23:38:38"
         },
         {
+            "name": "phenx/php-font-lib",
+            "version": "0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhenX/php-font-lib.git",
+                "reference": "b8af0cacdc3cbf1e41a586fcb78f506f4121a088"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/b8af0cacdc3cbf1e41a586fcb78f506f4121a088",
+                "reference": "b8af0cacdc3cbf1e41a586fcb78f506f4121a088",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "FontLib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                }
+            ],
+            "description": "A library to read, parse, export and make subsets of different types of font files.",
+            "homepage": "https://github.com/PhenX/php-font-lib",
+            "time": "2015-05-06 20:02:39"
+        },
+        {
+            "name": "phenx/php-svg-lib",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhenX/php-svg-lib.git",
+                "reference": "b419766515b3426c6da74b0e29e93d71c4f17099"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhenX/php-svg-lib/zipball/b419766515b3426c6da74b0e29e93d71c4f17099",
+                "reference": "b419766515b3426c6da74b0e29e93d71c4f17099",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Svg\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                }
+            ],
+            "description": "A library to read, parse and export to PDF SVG files.",
+            "homepage": "https://github.com/PhenX/php-svg-lib",
+            "time": "2015-05-06 18:49:49"
+        },
+        {
             "name": "phpoffice/phpexcel",
             "version": "1.8.1",
             "source": {
@@ -1357,56 +1359,6 @@
                 "xlsx"
             ],
             "time": "2015-05-01 07:00:55"
-        },
-        {
-            "name": "psr/http-message",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/http-message.git",
-                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
-                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\Http\\Message\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interface for HTTP messages",
-            "homepage": "https://github.com/php-fig/http-message",
-            "keywords": [
-                "http",
-                "http-message",
-                "psr",
-                "psr-7",
-                "request",
-                "response"
-            ],
-            "time": "2016-08-06 14:39:51"
         },
         {
             "name": "psr/log",
@@ -2296,60 +2248,6 @@
             "time": "2017-01-02 20:31:54"
         },
         {
-            "name": "symfony/psr-http-message-bridge",
-            "version": "v0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/psr-http-message-bridge.git",
-                "reference": "dc7e308e1dc2898a46776e2221a643cb08315453"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/psr-http-message-bridge/zipball/dc7e308e1dc2898a46776e2221a643cb08315453",
-                "reference": "dc7e308e1dc2898a46776e2221a643cb08315453",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "psr/http-message": "~1.0",
-                "symfony/http-foundation": "~2.3|~3.0"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "~2.7|~3.0"
-            },
-            "suggest": {
-                "zendframework/zend-diactoros": "To use the Zend Diactoros factory"
-            },
-            "type": "symfony-bridge",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Bridge\\PsrHttpMessage\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                }
-            ],
-            "description": "PSR HTTP message bridge",
-            "homepage": "http://symfony.com",
-            "keywords": [
-                "http",
-                "http-message",
-                "psr-7"
-            ],
-            "time": "2015-05-29 17:57:12"
-        },
-        {
             "name": "symfony/routing",
             "version": "v3.1.9",
             "source": {
@@ -2719,6 +2617,60 @@
     ],
     "packages-dev": [
         {
+            "name": "berkayk/onesignal-laravel",
+            "version": "v0.9.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/berkayk/laravel-onesignal.git",
+                "reference": "a6adc3ffd91536ff608ff1f02ee0df310d664a22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/berkayk/laravel-onesignal/zipball/a6adc3ffd91536ff608ff1f02ee0df310d664a22",
+                "reference": "a6adc3ffd91536ff608ff1f02ee0df310d664a22",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2",
+                "illuminate/support": "4.*|5.*",
+                "php": ">=5.4.0",
+                "symfony/psr-http-message-bridge": "^0.2.0"
+            },
+            "require-dev": {
+                "vlucas/phpdotenv": "^2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Berkayk\\OneSignal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maykonn Welington Candido",
+                    "email": "maykonn@outlook.com"
+                },
+                {
+                    "name": "Berkay Kaya",
+                    "email": "berkayk@gmail.com",
+                    "homepage": "http://berkaykaya.com"
+                }
+            ],
+            "description": "OneSignal Push Wrapper Laravel",
+            "keywords": [
+                "WebPush",
+                "laravel",
+                "laravel 5",
+                "onesignal",
+                "push"
+            ],
+            "time": "2016-12-21 11:06:02"
+        },
+        {
             "name": "doctrine/instantiator",
             "version": "1.0.5",
             "source": {
@@ -2819,6 +2771,177 @@
                 "fixtures"
             ],
             "time": "2016-04-29 12:21:54"
+        },
+        {
+            "name": "guzzlehttp/guzzle",
+            "version": "6.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "ebf29dee597f02f09f4d5bbecc68230ea9b08f60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ebf29dee597f02f09f4d5bbecc68230ea9b08f60",
+                "reference": "ebf29dee597f02f09f4d5bbecc68230ea9b08f60",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.3.1",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.0",
+                "psr/log": "^1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.2-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2016-10-08 15:01:37"
+        },
+        {
+            "name": "guzzlehttp/promises",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle promises library",
+            "keywords": [
+                "promise"
+            ],
+            "time": "2016-12-20 10:07:11"
+        },
+        {
+            "name": "guzzlehttp/psr7",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/psr7.git",
+                "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
+                "reference": "5c6447c9df362e8f8093bda8f5d8873fe5c7f65b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "PSR-7 message implementation",
+            "keywords": [
+                "http",
+                "message",
+                "stream",
+                "uri"
+            ],
+            "time": "2016-06-24 23:00:38"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -3567,6 +3690,56 @@
             "time": "2016-12-08 20:27:08"
         },
         {
+            "name": "psr/http-message",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/http-message.git",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Http\\Message\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for HTTP messages",
+            "homepage": "https://github.com/php-fig/http-message",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr",
+                "psr-7",
+                "request",
+                "response"
+            ],
+            "time": "2016-08-06 14:39:51"
+        },
+        {
             "name": "sebastian/code-unit-reverse-lookup",
             "version": "1.0.0",
             "source": {
@@ -4134,6 +4307,60 @@
             "description": "Symfony DomCrawler Component",
             "homepage": "https://symfony.com",
             "time": "2017-01-02 20:31:54"
+        },
+        {
+            "name": "symfony/psr-http-message-bridge",
+            "version": "v0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/psr-http-message-bridge.git",
+                "reference": "dc7e308e1dc2898a46776e2221a643cb08315453"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/psr-http-message-bridge/zipball/dc7e308e1dc2898a46776e2221a643cb08315453",
+                "reference": "dc7e308e1dc2898a46776e2221a643cb08315453",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "psr/http-message": "~1.0",
+                "symfony/http-foundation": "~2.3|~3.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7|~3.0"
+            },
+            "suggest": {
+                "zendframework/zend-diactoros": "To use the Zend Diactoros factory"
+            },
+            "type": "symfony-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bridge\\PsrHttpMessage\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "PSR HTTP message bridge",
+            "homepage": "http://symfony.com",
+            "keywords": [
+                "http",
+                "http-message",
+                "psr-7"
+            ],
+            "time": "2015-05-29 17:57:12"
         },
         {
             "name": "symfony/yaml",

@@ -172,8 +172,9 @@ return [
         Berkayk\OneSignal\OneSignalServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
-        App\Providers\ViewComposerServiceProvider::class,
-        //
+        Barryvdh\DomPDF\ServiceProvider::class,
+        //App\Providers\ViewComposerServiceProvider::class,
+        Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -183,7 +184,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        
     ],
 
     /*
@@ -235,10 +236,10 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
-        'OneSignal' => Berkayk\OneSignal\OneSignalFacade::class,
         'Excel'     => Maatwebsite\Excel\Facades\Excel::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
-
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
     ],
 
 ];
