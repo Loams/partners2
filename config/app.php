@@ -173,7 +173,7 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-        //App\Providers\ViewComposerServiceProvider::class,
+        App\Providers\ViewComposerServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
 
         /*
