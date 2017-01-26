@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -48,8 +48,14 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'gender' => 'required',
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
+            'function' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
+            'group_id' => 'nullable|required_without:store_id',
+            'store_id' => 'nullable|required_without:group_id',
+            'phone' => 'min:10|max:10|required',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -62,10 +68,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        $user_data = [
+            'gender' =>$data['gender'],
+            'firstname' =>$data['firstname'],
+            'lastname' => $data['lastname'],
+            'function' =>$data['function'],
             'email' => $data['email'],
+            'phone' =>$data['phone'],
             'password' => bcrypt($data['password']),
-        ]);
+        ];
+        
+        if(isset($data['group_id']) && $data['group_id'] != '')
+            $user_data['group_id'] = $data['group_id'];
+        
+        if(isset($data['store_id']) && $data['group_id'] != '')
+            $user_data['store_id'] = $data['store_id']; 
+        
+        return User::create($user_data);
     }
 }
