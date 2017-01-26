@@ -8,3 +8,4 @@ Homestead.yaml
 *.class
 *.pyc
 *.pyo
+vendor/composer
