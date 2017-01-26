@@ -18,11 +18,11 @@ class ViewComposerServiceProvider extends ServiceProvider {
 			
 			});
 			$user = Cache::remember('user', 60, function () use ($auth){
-    		if(is_null($auth->user())){
-    			return '';
-    		}else{
-    			return $auth->user();
-    		}
+        		if(is_null($auth->user())){
+        			return '';
+        		}else{
+        			return $auth->user();
+        		}
 			});  
 			$view->with(['user_role' => $user_role, 'user' => $user] );
         });
