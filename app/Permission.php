@@ -2,13 +2,11 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+use Zizaco\Entrust\EntrustPermission;
 
-class Permission extends Model {
+class Permission extends EntrustPermission {
 
-	protected $table = 'permissions';
-	public $timestamps = true;
-	protected $fillable = array('name', 'display_name', 'description');
 
 	public function roles()
 	{

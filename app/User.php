@@ -21,14 +21,11 @@ class User extends Authenticatable {
 		return $this->hasOne('App\Partner', 'partner_id');
 	}
 
-	public function notifications()
-	{
-		return $this->hasMany('App\Notification');
-	}
+	
 
 	public function roles()
 	{
-		return $this->hasMany('App\Role');
+		return $this->belongsToMany('App\Role');
 	}
 
 }
