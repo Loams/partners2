@@ -28,13 +28,13 @@ Route::put('stores/{id}', ['uses' => 'StoresController@update', 'as' => 'stores.
 **/
 
 //Override Users permission
-Route::get('users',  ['uses' => 'UsersController@index', 'as' => 'users.index', 'middleware'=>'permission:list-users']);
-Route::get('users/create',  ['uses' => 'UsersController@create', 'as' => 'users.create', 'middleware'=>['permission:create-users', 'owner:users']]);
-Route::get('users/{id}/edit', ['uses' => 'UsersController@edit', 'as' => 'users.edit', 'middleware'=>['permission:edit-users', 'owner:users']])->where('id', '[0-9]+');
-Route::delete('users/{id}', ['uses' => 'UsersController@destroy', 'as' => 'users.destroy','middleware'=>['permission:delete-users', 'owner:users']])->where('id', '[0-9]+');
-Route::get('users/{id}', ['uses' => 'UsersController@show', 'as' => 'users.show', 'middleware'=>['permission:show-users', 'owner:users']])->where('id', '[0-9]+');
-Route::post('users', ['uses' => 'UsersController@store', 'as' => 'users.store', 'middleware' => 'permission:create-users']);
-Route::put('users/{id}', ['uses' => 'UsersController@update', 'as' => 'users.update', 'middleware' => 'permission:edit-users']);
+Route::get('users',  ['uses' => 'UserController@index', 'as' => 'users.index', 'middleware'=>'permission:list-users']);
+Route::get('users/create',  ['uses' => 'UserController@create', 'as' => 'users.create', 'middleware'=>[]]);
+Route::get('users/{id}/edit', ['uses' => 'UserController@edit', 'as' => 'users.edit', 'middleware'=>['permission:edit-users', 'owner:users']])->where('id', '[0-9]+');
+Route::delete('users/{id}', ['uses' => 'UserController@destroy', 'as' => 'users.destroy','middleware'=>['permission:delete-users', 'owner:users']])->where('id', '[0-9]+');
+Route::get('users/{id}', ['uses' => 'UserController@show', 'as' => 'users.show', 'middleware'=>['permission:show-users', 'owner:users']])->where('id', '[0-9]+');
+Route::post('users', ['uses' => 'UserController@store', 'as' => 'users.store', 'middleware' => 'permission:create-users']);
+Route::put('users/{id}', ['uses' => 'UserController@update', 'as' => 'users.update', 'middleware' => 'permission:edit-users']);
 
 //Override Vouchers permission
 Route::get('vouchers',  ['uses' => 'VouchersController@index', 'as' => 'vouchers.index', 'middleware'=>'permission:create-vouchers']);
